@@ -13,7 +13,6 @@
     "features": {
         "pointing_device": true,
         "oled": true,
-        "rgblight": true,
         "rgb_matrix": true
     },
     "build": {
@@ -21,8 +20,8 @@
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
-        "cols": ["GP5", "GP15", "GP26", "GP28", "GP29", "GP1"],
-        "rows": ["GP2", "GP3", "GP4", "GP27"]
+        "cols": ["GP2", "GP3", "GP4", "GP5", "GP6", "GP7"],
+        "rows": ["GP8", "GP9", "GP10", "GP11"]
     },
     "layouts": {
         "LAYOUT_split_3x6_3": {
@@ -54,29 +53,25 @@
             ]
         }
     },
-    "ws2812": {
-        "driver": "vendor",
-        "pin": "GP10"
-    },
-    "rgblight": {
-        "led_count": 2,
-        "animations": {
-            "breathing": true
-        },
-        "default":{
-            "val":5,
-            "animation":"breathing"
-        },
-        "max_brightness": 10
-    },
     "rgb_matrix": {
         "driver": "is31fl3746a",
         "animations": {
-            "breathing": true
+            "alphas_mods": true,
+            "breathing": true,
+            "cycle_left_right": true,
+            "rainbow_beacon": true
         },
         "default":{
-            "animation":"breathing"
+            "animation":"solid_color",
+            "on":true,
+            "hue":171,
+            "sat":89,
+            "val":95
         },
-        "layout":[{"matrix": [0, 0], "x": 0, "y": 0, "flags": 2}]
+        "layout":[
+            {"matrix": [0, 4], "x": 144, "y": 0, "flags": 2},
+            {"matrix": [0, 5], "x": 188, "y": 0, "flags": 4},
+            {"matrix": [1, 4], "x": 144, "y": 16, "flags": 4}
+    ]
     }
 }
