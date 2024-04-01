@@ -15,6 +15,7 @@
         "pointing_device": true,
         "nkro": true,
         "oled": true,
+        "audio": true,
         "rgb_matrix": true
     },
     "build": {
@@ -26,19 +27,7 @@
         "rows": ["GP8", "GP9", "GP10", "GP11"]
     },
     "split": {
-        "enabled": true,
-        "transport": {
-            "sync": {
-                "layer_state":true,
-                "matrix_state": true
-            }
-        },
-        "matrix_pins": {
-            "right": {
-                "cols": ["GP2", "GP3", "GP4", "GP5", "GP6", "GP7"],
-                "rows": ["GP8", "GP9", "GP10", "GP11"]
-            }
-        }
+        "enabled": true
     },
     "layouts": {
         "LAYOUT_split_3x6_3": {
