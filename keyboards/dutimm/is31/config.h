@@ -1,0 +1,27 @@
+#pragma once
+
+#define MASTER_LEFT
+// #define SERIAL_USART_FULL_DUPLEX   // Enable full duplex operation mode.
+#define SERIAL_USART_TX_PIN GP28   // USART TX pin
+// #define SERIAL_USART_RX_PIN GP29   // USART RX pin
+// #define RP_SIO_USE_UART0 TRUE
+
+// #define I2C_DRIVER I2CD0
+// #define OLED_UPDATE_INTERVAL 50
+// #define I2C0_SDA_PIN GP17
+// #define I2C0_SCL_PIN GP18
+
+
+#define IS31FL3746A_I2C_ADDRESS_1 IS31FL3746A_I2C_ADDRESS_GND_GND
+// #define I2C_DRIVER I2CD1
+#define I2C1_SDA_PIN GP14
+#define I2C1_SCL_PIN GP15
+#define RGB_MATRIX_LED_COUNT 42
+
+#define PMW33XX_CS_PIN GP25
+// #define PMW33XX_LIFTOFF_DISTANCE 0x04
+// #define SPI_SCK_PIN GP26
+// #define SPI_MISO_PIN GP24
+// #define SPI_MOSI_PIN GP27
+
+// #define DYNAMIC_KEYMAP_LAYER_COUNT 6
