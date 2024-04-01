@@ -1,0 +1,25 @@
+#pragma once
+
+#define MASTER_LEFT
+#define SERIAL_USART_FULL_DUPLEX   // Enable full duplex operation mode.
+#define SERIAL_USART_TX_PIN GP20   // USART TX pin
+#define SERIAL_USART_RX_PIN GP21   // USART RX pin
+
+#define I2C_DRIVER I2CD0
+#define OLED_UPDATE_INTERVAL 50
+#define I2C0_SDA_PIN GP16
+#define I2C0_SCL_PIN GP17
+
+
+#define RGB_MATRIX_LED_COUNT 40
+
+#define PMW33XX_CS_PIN GP25
+
+#define AUDIO_PIN GP12
+#define AUDIO_PWM_DRIVER PWMD6
+#define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
+
+// #define PMW33XX_LIFTOFF_DISTANCE 0x04
+// #define SPI_SCK_PIN GP26
+// #define SPI_MISO_PIN GP24
+// #define SPI_MOSI_PIN GP27
