@@ -1,33 +1,35 @@
 {
+    "keyboard_name":"dutimm_origin",
     "maintainer": "metazoan94",
     "manufacturer": "metazoan94",
     "url": "https://github.com/metazoan94",
     "usb": {
         "vid": "0xC1ED",
-        "device_version": "1.0.0"
+        "device_version": "1.0.0",
+        "pid": "0x23B2"
     },
     "processor": "RP2040",
     "bootloader": "rp2040",
     "features": {
         "bootmagic": true,
-        "extrakey": true,
-        "mousekey": true,
         "pointing_device": true,
-        "nkro": true,
-        "oled": true,
-        "audio": true,
-        "rgb_matrix": true
+        "oled": true
     },
     "build": {
         "firmware_format": "uf2"
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
-        "cols": ["GP2", "GP3", "GP4", "GP5", "GP6", "GP7"],
-        "rows": ["GP8", "GP9", "GP10", "GP11"]
+        "cols": ["GP1", "GP2", "GP3", "GP4", "GP5", "GP6"],
+        "rows": ["GP7", "GP8", "GP9", "GP10"]
     },
     "split": {
         "enabled": true
+    },
+    "encoder": {
+        "rotary": [
+            {"pin_a": "GP18", "pin_b": "GP19"}
+        ]
     },
     "layouts": {
         "LAYOUT_split_3x6_3": {
