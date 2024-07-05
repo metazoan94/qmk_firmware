@@ -1,4 +1,4 @@
 #pragma once
 
-#define RGB_MATRIX_LED_COUNT 40
+#define RGB_MATRIX_LED_COUNT 42
 

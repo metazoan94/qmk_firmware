@@ -20,7 +20,7 @@ static void render_logo(void) {
 }
 bool oled_task_user(void) {
     render_logo();
-    oled_write_P(PSTR("AAAAAAAAAAAA\n"), false);
+    oled_write_P(PSTR("sdafs\n"), false);
     return false;
 }
 #endif
@@ -30,5 +30,5 @@ void keyboard_post_init_user(void) {
   debug_enable=true;
 //   debug_matrix=true;
 //   debug_keyboard=true;
-  debug_mouse=true;
 }
+

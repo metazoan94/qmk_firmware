@@ -7,14 +7,12 @@
         "driver": "is31fl3746a",
         "split_count": [21,21],
         "animations": {
-            "solid_color": true
+            "cycle_all": true,
+            "gradient_left_right": true,
+            "rainbow_moving_chevron": true
         },
         "default":{
-            "animation":"solid_color",
-            "on":true,
-            "hue":0,
-            "sat":0,
-            "val":255
+            "animation":"cycle_all"
         }
     }
 }
