@@ -3,12 +3,12 @@
 
 enum my_layers {
     _BASE = 0,
-    _L_EDIT,
-    _R_NAV,
-    _LR_FEATURE,
-    _L_FUNC,
-    _R_MOUSE,
-    _L_MISC,
+    _ED,
+    _NV,
+    _FT,
+    _FN,
+    _MS,
+    _MI,
 };
 static const uint8_t
     // { 5,  4,  3,  2,  1,  0  }, // { 22, 23, 24, 25, 26, 27 },
@@ -39,26 +39,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|-----------------------------------------------------------------------------------------------|                    |-----------------------------------------------------------------------------------------------|
      KC_LGUI,        KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSPC,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-     LT(2,KC_ESC),   LGUI_T(KC_A),   LALT_T(KC_S),   LSFT_T(KC_D),   LCTL_T(KC_F),   KC_G,                                KC_H,           RCTL_T(KC_J),   RSFT_T(KC_K),   LALT_T(KC_L),   RGUI_T(KC_SCLN),LT(1,KC_QUOT),
+     LT(_NV,KC_ESC), LGUI_T(KC_A),   LALT_T(KC_S),   LSFT_T(KC_D),   LCTL_T(KC_F),   KC_G,                                KC_H,           RCTL_T(KC_J),   RSFT_T(KC_K),   LALT_T(KC_L),   RGUI_T(KC_SCLN),LT(_ED,KC_QUOT),
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
      KC_LSFT,        KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                KC_N,           KC_M,           KC_COMM,        KC_DOT,         KC_SLSH,        KC_ESC,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-                     LT(6,KC_EQL),   LT(5,KC_MINS),  LT(1,KC_SPC),   LT(4,KC_ENT),   KC_B,                                KC_H,           LT(5,KC_EQL),  LT(2,KC_BSPC)
+                     LT(_MI,KC_EQL), LT(_MS,KC_BSPC),LT(_ED,KC_SPC), LT(_FN,KC_ENT), KC_B,                                KC_H,           LT(_MS,KC_EQL), LT(_NV,KC_BSPC)
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
   ),
-  [_L_EDIT] = LAYOUT_split_3x6_4(
+  [_ED] = LAYOUT_split_3x6_4(
   //|-----------------------------------------------------------------------------------------------|                    |-----------------------------------------------------------------------------------------------|
-     _______,        KC_6,           KC_7,           KC_8,           KC_9,           KC_0,                                _______,        KC_LPRN,        KC_RPRN,        _______,        _______,        _______,
+     KC_GRV,         KC_6,           KC_7,           KC_8,           KC_9,           KC_0,                                KC_PLUS,        KC_LPRN,        KC_LCBR,        KC_LBRC,        KC_BSLS,        _______,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-     _______,        KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                _______,        RCTL_T(KC_J),   RSFT_T(KC_K),   LALT_T(KC_L),   RGUI_T(KC_SCLN), _______,
+     KC_DEL,         KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                KC_EQL,         RCTL_T(KC_J),   RSFT_T(KC_K),   LALT_T(KC_L),   RGUI_T(KC_SCLN),KC_UNDS,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-     C(KC_Y),        KC_EQL,         KC_MINS,        C(KC_C),        C(KC_V),        C(KC_F),                             _______,        _______,        _______,        _______,        _______,        _______,
+     C(KC_Y),        C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),        C(KC_F),                             KC_MINS,        KC_RPRN,        KC_RCBR,        KC_RBRC,        KC_PIPE,        _______,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-                     _______,        _______,        _______,        _______,        DT_PRNT,                             _______,        _______,        MO(3)
+                     _______,        _______,        _______,        _______,        DT_PRNT,                             _______,        _______,        MO(_FT)
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
 
   ),
-  [_R_NAV] = LAYOUT_split_3x6_4(
+  [_NV] = LAYOUT_split_3x6_4(
   //|-----------------------------------------------------------------------------------------------|                    |-----------------------------------------------------------------------------------------------|
      _______,        _______,        _______,        _______,        _______,        _______,                             _______,        KC_PGUP,        KC_UP,          KC_PGDN,        _______,        _______,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
@@ -66,45 +66,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
      _______,        _______,        _______,        _______,        _______,        _______,                             KC_INS,         _______,        _______,        _______,        _______,        _______,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-                     _______,        _______,        MO(3),          _______,        _______,                             _______,        _______,        _______
+                     _______,        _______,        MO(_FT),          _______,        _______,                         _______,        _______,        _______
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
 
   ),
-  [_LR_FEATURE] = LAYOUT_split_3x6_4(
+  [_FT] = LAYOUT_split_3x6_4(
   //|-----------------------------------------------------------------------------------------------|                    |-----------------------------------------------------------------------------------------------|
      QK_BOOT,        XXXXXXX,        XXXXXXX,        XXXXXXX,        DT_PRNT,        CW_TOGG,                             XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
      KC_LSFT,        RGB_TOG,        RGB_MOD,        RGB_VAI,        RGB_SAI,        RGB_TOG,                             XXXXXXX,        RCTL_T(KC_J),   RSFT_T(KC_K),   LALT_T(KC_L),   RGUI_T(KC_SCLN),XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-     MU_TOGG,        MU_NEXT,        AU_NEXT,        XXXXXXX,        XXXXXXX,        MU_TOGG,                             XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
+     CK_DOWN,        CK_DOWN,        AU_NEXT,        AU_TOGG,        MU_NEXT,        MU_TOGG,                             XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
                      XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,                             XXXXXXX,        XXXXXXX,        XXXXXXX
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
 
   ),
-  [_L_FUNC] = LAYOUT_split_3x6_4(
+  [_FN] = LAYOUT_split_3x6_4(
   //|-----------------------------------------------------------------------------------------------|                    |-----------------------------------------------------------------------------------------------|
-     KC_EXEC,        KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,                              XXXXXXX,        KC_LPRN,        KC_RPRN,        KC_WH_U,        KC_WH_D,        XXXXXXX,
+     XXXXXXX,        KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,                              XXXXXXX,        KC_LPRN,        KC_RPRN,        KC_WH_U,        KC_WH_D,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
      XXXXXXX,        KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                               XXXXXXX,        RCTL_T(KC_J),   RSFT_T(KC_K),   LALT_T(KC_L),   RGUI_T(KC_SCLN),XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-     KC_AGIN,        KC_F11,         KC_F12,         KC_COPY,        KC_PSTE,        KC_PGDN,                             XXXXXXX,        KC_BTN5,        KC_BTN6,        KC_BTN7,        KC_BTN8,        XXXXXXX,
+     XXXXXXX,        KC_F11,         KC_F12,         XXXXXXX,        XXXXXXX,        XXXXXXX,                             XXXXXXX,        KC_BTN5,        KC_BTN6,        KC_BTN7,        KC_BTN8,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
                      XXXXXXX,       XXXXXXX,         XXXXXXX,        XXXXXXX,        XXXXXXX,                             XXXXXXX,        XXXXXXX,        XXXXXXX
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
   ),
-  [_R_MOUSE] = LAYOUT_split_3x6_4(
+  [_MS] = LAYOUT_split_3x6_4(
   //|-----------------------------------------------------------------------------------------------|                    |-----------------------------------------------------------------------------------------------|
-     KC_EXEC,        KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,                              XXXXXXX,        KC_WH_L,        KC_WH_R,        KC_WH_U,        KC_WH_D,        XXXXXXX,
+     XXXXXXX,        KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,                              XXXXXXX,        KC_WH_L,        KC_WH_R,        KC_WH_U,        KC_WH_D,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
      XXXXXXX,        KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                               XXXXXXX,        KC_BTN1,        KC_BTN2,        KC_BTN3,        KC_BTN4,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
-     KC_AGIN,        KC_F11,         KC_F12,         KC_COPY,        KC_PSTE,        KC_PGDN,                             XXXXXXX,        KC_BTN5,        KC_BTN6,        KC_BTN7,        KC_BTN8,        XXXXXXX,
+     XXXXXXX,        KC_F11,         KC_F12,         XXXXXXX,        XXXXXXX,        XXXXXXX,                             XXXXXXX,        KC_BTN5,        KC_BTN6,        KC_BTN7,        KC_BTN8,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
                      XXXXXXX,       XXXXXXX,         XXXXXXX,        XXXXXXX,        XXXXXXX,                             XXXXXXX,        XXXXXXX,        XXXXXXX
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
   ),
-  [_L_MISC] = LAYOUT_split_3x6_4(
+  [_MI] = LAYOUT_split_3x6_4(
   //|-----------------------------------------------------------------------------------------------|                    |-----------------------------------------------------------------------------------------------|
      XXXXXXX,        KC_WH_L,        KC_WH_R,        KC_WH_U,        KC_WH_D,        XXXXXXX,                             XXXXXXX,        XXXXXXX,        KC_MS_U,        XXXXXXX,        XXXXXXX,        XXXXXXX,
   //|---------------+---------------+---------------+---------------+---------------+---------------|                    |---------------+---------------+---------------+---------------+---------------+---------------|
@@ -165,7 +165,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     }
 
     switch (get_highest_layer(layer_state|default_layer_state)) {
-        case _L_EDIT:
+        case _ED:
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_HOME,  LEFT_THUMB_COLOR);
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_HOME,  LEFT_THUMB_COLOR);
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_INNER, RGB_OFF);
@@ -174,7 +174,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_OUTER, RGB_OFF);
             break;
 
-        case _R_NAV:
+        case _NV:
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_HOME,  RGB_OFF);
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_HOME,  RGB_OFF);
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_INNER, LEFT_THUMB_COLOR);
@@ -183,7 +183,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_OUTER, RGB_OFF);
             break;
 
-        case _LR_FEATURE:
+        case _FT:
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_HOME,  RGB_OFF);
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_HOME,  RGB_OFF);
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_INNER, RGB_OFF);
@@ -192,7 +192,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_OUTER, LEFT_THUMB_COLOR);
             break;
 
-        case _L_FUNC:
+        case _FN:
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_HOME,  RIGHT_THUMB_COLOR);
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_HOME,  RIGHT_THUMB_COLOR);
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_INNER, RGB_OFF);
@@ -201,7 +201,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_OUTER, RGB_OFF);
             break;
 
-        case _R_MOUSE:
+        case _MS:
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_HOME,  RGB_OFF);
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_HOME,  RGB_OFF);
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_INNER, RIGHT_THUMB_COLOR);
@@ -210,7 +210,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_OUTER, RGB_OFF);
             break;
 
-        case _L_MISC:
+        case _MI:
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_HOME,  RGB_OFF);
             rgb_matrix_set_color(RIGHT_THUMB_CLUSTER_HOME,  RGB_OFF);
             rgb_matrix_set_color( LEFT_THUMB_CLUSTER_INNER, RGB_OFF);
@@ -253,22 +253,22 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     //             // if (!HAS_FLAGS(g_led_config.flags[index], LED_FLAG_INDICATOR)) continue;
     //             if (keymap_key_to_keycode(layer, (keypos_t){col, row}) > KC_TRNS) {
     //                 switch (layer) {
-    //                     case _L_EDIT:
+    //                     case _ED:
     //                         rgb_matrix_set_color(index, RGB_GREEN);
     //                         break;
-    //                     case _R_NAV:
+    //                     case _NV:
     //                         rgb_matrix_set_color(index, RGB_RED);
     //                         break;
-    //                     case _LR_FEATURE:
+    //                     case _FT:
     //                         rgb_matrix_set_color(index, RGB_BLUE);
     //                         break;
-    //                     case _L_FUNC:
+    //                     case _FN:
     //                         rgb_matrix_set_color(index, RGB_ORANGE);
     //                         break;
-    //                     case _R_MOUSE:
+    //                     case _MS:
     //                         rgb_matrix_set_color(index, RGB_PURPLE);
     //                         break;
-    //                     case _L_MISC:
+    //                     case _MI:
     //                         rgb_matrix_set_color(index, RGB_PURPLE);
     //                         break;
     //                     default:
@@ -285,11 +285,11 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_BASE] = { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT)  },
-    [_L_EDIT] = { ENCODER_CCW_CW(DT_UP, DT_DOWN), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT)  },
-    [_R_NAV] = { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT)  },
-    [_LR_FEATURE] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
-    [_L_FUNC] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
-    [_R_MOUSE] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
-    [_L_MISC] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  }
+    [_ED] = { ENCODER_CCW_CW(DT_UP, DT_DOWN), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT)  },
+    [_NV] = { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT), ENCODER_CCW_CW(KC_RIGHT, KC_LEFT)  },
+    [_FT] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
+    [_FN] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
+    [_MS] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
+    [_MI] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),  ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  }
 };
 #endif
