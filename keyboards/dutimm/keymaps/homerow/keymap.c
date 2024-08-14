@@ -34,6 +34,19 @@ static const uint8_t
 #define CAPS_LOCK_COLOR     RGB_BLUE
 #define CAPS_WORD_COLOR     RGB_SPRINGGREEN
 
+
+const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(we_combo, KC_LPRN),
+    COMBO(er_combo, KC_RPRN),
+    COMBO(xc_combo, KC_DQUO),
+    COMBO(cv_combo, KC_MINS)
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_split_3x6_4(
   //|-----------------------------------------------------------------------------------------------|                    |-----------------------------------------------------------------------------------------------|

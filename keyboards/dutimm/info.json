@@ -13,8 +13,11 @@
     "features": {
         "pointing_device": true,
         "audio": true,
+        "combo": true,
         "encoder": true,
+        "encoder_map": true,
         "extrakey": true,
+        "dynamic_tapping_term": true,
         "nkro": true,
         "mousekey": true
     },
