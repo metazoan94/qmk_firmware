@@ -11,28 +11,45 @@
     "processor": "RP2040",
     "bootloader": "rp2040",
     "features": {
-        "bootmagic": true,
         "pointing_device": true,
-        "oled": true
+        "audio": true,
+        "encoder": true,
+        "extrakey": true,
+        "nkro": true,
+        "mousekey": true
     },
     "build": {
         "firmware_format": "uf2"
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
-        "cols": ["GP1", "GP2", "GP3", "GP4", "GP5", "GP6"],
-        "rows": ["GP7", "GP8", "GP9", "GP10"]
+        "cols": ["GP29", "GP28", "GP27", "GP26", "GP25", "GP24"],
+        "rows": ["GP23", "GP22", "GP21", "GP20"]
     },
     "split": {
-        "enabled": true
+        "enabled": true,
+        "handedness":{
+            "pin":"GP0"
+        },
+        "transport": {
+            "sync": {
+                "indicators": true,
+                "layer_state": true,
+                "matrix_state": true,
+                "modifiers": true
+            }
+        }
     },
     "encoder": {
         "rotary": [
-            {"pin_a": "GP18", "pin_b": "GP19"}
+            {"pin_a": "GP13", "pin_b": "GP14"}
         ]
     },
+    "mouse_key":{
+        "enabled":true
+    },
     "layouts": {
-        "LAYOUT_split_3x6_3": {
+        "LAYOUT_split_3x6_4": {
             "layout": [
                 {"matrix": [0, 0], "x": 0, "y": 0.3},
                 {"matrix": [0, 1], "x": 1, "y": 0.3},
@@ -76,6 +93,8 @@
                 {"matrix": [6, 1], "x": 13, "y": 2.3},
                 {"matrix": [6, 0], "x": 14, "y": 2.3},
 
+                {"matrix": [3, 1], "x": 2, "y": 3.7},
+                {"matrix": [3, 2], "x": 3, "y": 3.7},
                 {"matrix": [3, 3], "x": 4, "y": 3.7},
                 {"matrix": [3, 4], "x": 5, "y": 3.7},
                 {"matrix": [3, 5], "x": 6, "y": 3.2, "h": 1.5},
